@@ -27,3 +27,7 @@ Build
 cmake-build-debug
 cmake-build-release
 .vs
+
+# meson
+!meson.build
+/build*
