@@ -54,12 +54,15 @@ foreach flag : maybe_cpp_test_flags
   endif
 endforeach
 
-test('tests', executable(
-  'tests'
-, source_paths
-, include_directories : include
-, implicit_include_directories : false
-, cpp_args : cpp_test_flags
-))
+test('tests'
+, executable(
+    'tests'
+  , source_paths
+  , include_directories : include
+  , implicit_include_directories : false
+  , cpp_args : cpp_test_flags
+  )
+, args : ['-s']
+)
 
 catch = declare_dependency(include_directories : include)
