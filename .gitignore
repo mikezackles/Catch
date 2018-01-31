@@ -27,3 +27,6 @@ Build
 .vs
 cmake-build-*
 benchmark-dir
+
+!meson.build
+/build*
