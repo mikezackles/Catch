@@ -100,6 +100,7 @@ impl_sources = [
 , 'include/internal/catch_timer.cpp'
 , 'include/internal/catch_tostring.cpp'
 , 'include/internal/catch_totals.cpp'
+, 'include/internal/catch_uncaught_exceptions.cpp'
 , 'include/internal/catch_version.cpp'
 , 'include/internal/catch_wildcard_pattern.cpp'
 , 'include/internal/catch_xmlwriter.cpp'
