@@ -2,6 +2,8 @@ project(
   'Catch2', 'cpp'
 , default_options : [
     'cpp_std=c++14'
+  , 'werror=true'
+  , 'warning_level=3'
   ]
 )
 
@@ -112,6 +114,15 @@ reporter_sources = [
 , 'include/reporters/catch_reporter_xml.cpp'
 ]
 
+compiler = meson.get_compiler('cpp')
+if compiler.get_id() == 'gcc' or compiler.get_id() == 'clang'
+  args = [
+    '-Wno-non-virtual-dtor'
+  ]
+else
+  args = []
+endif
+
 include = include_directories('include')
 
 test('tests'
@@ -120,6 +131,7 @@ test('tests'
   , test_sources + surrogate_sources + impl_sources + reporter_sources
   , include_directories : include
   , implicit_include_directories : false
+  , cpp_args: args
   )
 #, args : ['-s']
 )
