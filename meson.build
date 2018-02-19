@@ -137,4 +137,8 @@ test('tests'
 #, args : ['-s']
 )
 
-catch_dep = declare_dependency(include_directories : include)
+catch_dep = declare_dependency(
+  include_directories : include
+, sources : surrogate_sources + impl_sources + reporter_sources
+, compile_args : args
+)
